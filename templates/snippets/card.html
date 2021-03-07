@@ -1,0 +1,14 @@
+<div class="card" style="width: 18rem;">
+  {% if instance.image %}
+  <a href="{% url 'products:product_detail' instance.slug %}" ><img src="{{ instance.image.url }}" class="card-img-top" alt="{{instance.title}} logo">
+  </a>
+  {% endif %}
+  <div class="card-body">
+    <h5 class="card-title"> {{ instance.title }}</h5>
+    <p class="card-text">{{ instance.description|truncatewords:12 }}</p>
+    <a href="{% url 'products:product_detail' instance.slug %}" class="btn btn-primary"> View </a> <br>
+    {%  include 'products/add_to_cart.html' with product=instance cart=cart %}
+
+<!--    <a href="{% url 'products:product_detail' instance.slug %}" class="btn btn-primary"> URL shortcut </a>-->
+  </div>
+</div>
