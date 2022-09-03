@@ -1,4 +1,1 @@
-# Django-ecommerce-
-A Django ecommerce app
-
-Not completed though
+# An ecommerce web application
